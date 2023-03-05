@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.rootlayout{
+    min-height: 100vh;
+}
+.rootlayout nav{
+    min-height: 100vh;
+    background-color: rgb(49, 44, 44);
+    color: white;
+    max-width: 25%;
+    font-size: 23px;
+}
+.rootlayout ul{
+    padding: 50px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.rootlayout ul a{
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    display: flex;
+    gap: 25px;
+}
+.rootlayout ul >a li{
+list-style: none;
+}
+.rootlayout ul a.active{
+    color: white;
+    background-color: blue;
+}
+.discover >a{
+ display: flex;
+ gap: 25px; 
+ margin-top: 25px;  
+}
+.discover >a li{
+    list-style: none;
+}
+
+@media only screen and (max-width: 600px){
+    .rootlayout a{
+        width: 70px  !important;
+    }
+    .rootlayout a li, .discover p{
+        display: none !important;
+    }
+}
