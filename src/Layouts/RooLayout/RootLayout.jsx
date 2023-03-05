@@ -18,7 +18,7 @@ const RootLayout = () => {
     }, [color])
   return (
     <div className={Root.rootlayout}>
-        <nav style={{width: toggle ? '70px': '300px' }}>
+        <nav style={{width: toggle ? '100px': '300px' }}>
             <div className={Root.ham}>
                 <div className={Root.color}>
                     <span className={Root.one} onClick={()=>{BgColor('red')}}></span>
