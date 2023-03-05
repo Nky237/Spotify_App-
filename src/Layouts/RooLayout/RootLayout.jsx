@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import Root from '../RooLayout/Root.module.css'
 import { AiOutlineHome } from 'react-icons/ai';
@@ -9,17 +9,30 @@ const RootLayout = () => {
     const Open = ()=>{
         setToggle(!toggle)
     }
+    const [color, setColor] = useState('#F4F5FE')
+    const BgColor = (color)=>{
+      setColor(color)
+    }
+    useEffect(()=>{
+        document.body.style.backgroundColor = color
+    }, [color])
   return (
     <div className={Root.rootlayout}>
         <nav style={{width: toggle ? '70px': '300px' }}>
-            <div className="logo">SPOTIFY</div>
-            <div>
+            <div className={Root.ham}>
+                <div className={Root.color}>
+                    <span className={Root.one} onClick={()=>{BgColor('red')}}></span>
+                    <span className={Root.two} onClick={()=>{BgColor('yellow')}}></span>
+                    <span className={Root.three} onClick={()=>{BgColor('green')}}></span>
+                </div>
                 <div className="harmburger">
                     <GiHamburgerMenu onClick={Open} />
                 </div>
             </div>
+            <div className="logo">SPOTIFY</div>
             <ul>
                     
+                <div>
                 <NavLink to='/'>  
                     <AiOutlineHome />
                     <li style={{display: toggle ? 'none': 'block'}}>Home</li>
@@ -32,6 +45,7 @@ const RootLayout = () => {
                          <AiOutlineHome />
                     <li style={{display: toggle ? 'none': 'block'}}>Feed</li>
                 </NavLink>
+                </div>
                 <main className={Root.discover}>
                     <p style={{display: toggle ? 'none': 'block'}}>Discover</p>
                     <NavLink to='new'>
@@ -66,9 +80,9 @@ const RootLayout = () => {
                 </main>
             </ul>
         </nav>
-        <main>
+        <section>
             <Outlet />
-        </main>
+        </section>
     </div>
   )
 }

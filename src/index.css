@@ -1,0 +1,9 @@
+a{
+  padding: 10px 30px;
+  margin: 0px !important;
+}
+a.active{
+  color: white !important;
+  background-color: black;
+  
+}
