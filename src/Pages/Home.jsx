@@ -1,9 +1,21 @@
 import React from 'react'
+import { HiArrowNarrowLeft, HiArrowNarrowRight } from 'react-icons/hi'
+import { FiSearch } from 'react-icons/fi'
 
 const Home = () => {
   return (
-    <div>Home
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ratione odit qui tempora, quos voluptas quae, nobis sed voluptatem sunt quia in dolores dignissimos vitae tenetur, nulla quasi exercitationem quidem.
+    <div>
+        <section className='main'>
+          <div className="cont">
+          <div className="search">
+                <HiArrowNarrowLeft />
+                <HiArrowNarrowRight />
+                <input type="text" placeholder='search for artists, songs and ...'/>
+                <FiSearch className='searchIcon' />
+            </div>
+          </div>
+        </section>
+        <section className='Nav'></section>
     </div>
   )
 }
