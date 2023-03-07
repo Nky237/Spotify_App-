@@ -46,18 +46,32 @@ const Home = () => {
             <div className="playlist">
               <h1>My Playlist</h1>
               <div>
+              <table>
+                <tr>
+                  <th><BsQuote /></th>
+                  <th>TITLE</th>
+                  <th>ARTIST</th>
+                  <th>TIME</th>
+                  <th>ALBUM</th>
+                </tr>
                   {
                     data.map(item => (
-                      <table>
-                          <td>{item.id}</td>
+                          <tr>
+                            <td>{item.id}</td>
                           <td>{item.title}</td>
                           <td>{item.Artist}</td>
                           <td>{item.time}</td>
                           <td>{item.Album}</td>
-                      </table>
+                          </tr>
                     ))
                   }
+             </table>
               </div>
+            </div>
+
+            {/* PLAY */}
+            <div className="play">
+                  
             </div>
           </div>
         </section>

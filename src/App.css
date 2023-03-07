@@ -1,7 +1,6 @@
 .main{
     width: 70%;
     min-height: 100vh;
-    border: 1px solid black;
 }
 .cont{
     width: 90%;
@@ -29,7 +28,7 @@
 }
 
 .header{
-    padding-top: 60px;
+    padding-top: 20px;
 }
 .trend{
     display: flex;
@@ -88,8 +87,23 @@
     font-size: 32px;
 }
 tr th{
-    padding: 10px 55px 10px 0;
+    padding: 10px 80px 10px 0;
+}
+table{
+    width: 100%;
+    color: #BABBC2;
 }
 table td{
-padding: 10px 55px 10px 0;
+padding: 10px 75px 10px 0;
+}
+tr:hover{
+    background-color: white;
+    color: black;
+}
+.play{
+    width: 1005;
+    height: 70px;
+    border-radius: 25px;
+    background-color: white;
+    padding-bottom: 10px;
 }
