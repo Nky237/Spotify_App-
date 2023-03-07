@@ -4,13 +4,16 @@
     margin: 0;
     font-family: sans-serif;
 }
+body{
+    background-color: #F4F5FE;
+}
 .rootlayout{
     min-height: 100vh;
     display: flex;
     width: 100%;
 }
 .wrapper{
-    width: 80%;
+    width: 85%;
     margin: auto;
 }
 .ham{
@@ -31,6 +34,7 @@
     max-width: 30%;
     font-size: 14px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white !important;
     
 }
 .rootlayout .container nav{
@@ -110,7 +114,7 @@ section{
 }
 section{
     background-color: #F4F5FE;
-    width: 80%;
+    width: 70%;
     
 }
 
