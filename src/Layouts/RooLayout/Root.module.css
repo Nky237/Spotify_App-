@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: sans-serif;
 }
 .rootlayout{
     min-height: 100vh;
@@ -9,37 +10,21 @@
 }
 .ham{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 20px 20px 20px 0px;
 }
-.color{
+.logo{
     display: flex;
-    gap: 10px;
-    display: none;
-}
-.one{
-    background-color: red;
+    align-items: center;
+    gap: 15px;
 }
 
-.two{
-    background-color: yellow;
-}
-.three{
-    background-color: green;
-}
-.color >span{
-    /* border: 1px solid white; */
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-   
-}
 .rootlayout nav{
     min-height: 100vh;
     background-color: white;
     color: black;
-    max-width: 25%;
-    font-size: 20px;
+    max-width: 30%;
+    font-size: 14px;
     padding-left: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -50,38 +35,53 @@
     gap: 20px;
 }
 .rootlayout ul a{
-    color: black;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 14px;
     display: flex;
-    gap: 20px;
+    gap: 12px;
     width: 90%;
     border-radius: 10px;
     margin: auto;
+    align-items: center;
+    font-weight: 600;
+    color: #99989A;
 }
+/* .rootlayout a:hover{
+    background-color: black;
+    color: white;
+} */
+
 .rootlayout ul >a li{
 list-style: none;
+
 }
 .rootlayout ul a.active{
     color: white;
     background-color: blue;
 }
 
+
 .discover >a{
  display: flex;
- gap: 25px; 
- margin-top: 25px;  
+ gap: 12px; 
+ margin-top: 25px; 
+ align-items: center; 
 }
 .discover >a li{
     list-style: none;
 }
 .discover p{
-    padding-left: 20px;
+    padding-left: 30px;
+    margin: 0 0;
+    font-size: 12px;
+    color: #99989A;
+
 }
 section{
     color: black;
     width: 70%;
 }
+
 
 @media only screen and (max-width: 600px){
     .rootlayout a{
@@ -89,5 +89,8 @@ section{
     }
     .rootlayout a li, .discover p{
         display: none !important;
+    }
+    .logo h1{
+        display: none;
     }
 }
