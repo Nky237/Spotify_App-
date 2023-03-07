@@ -8,6 +8,10 @@
     min-height: 100vh;
     display: flex;
 }
+.wrapper{
+    width: 80%;
+    margin: auto;
+}
 .ham{
     display: flex;
     justify-content: flex-end;
@@ -17,16 +21,19 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    padding-left: 15px;
 }
 
-.rootlayout nav{
+.rootlayout .container{
     min-height: 100vh;
-    background-color: white;
     color: black;
     max-width: 30%;
     font-size: 14px;
-    padding-left: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+.rootlayout .container nav{
+    background-color: white;
 }
 .rootlayout ul{
     padding: 20px 0 0 0;
@@ -71,17 +78,38 @@ list-style: none;
     list-style: none;
 }
 .discover p{
-    padding-left: 30px;
     margin: 0 0;
     font-size: 12px;
     color: #99989A;
+    padding-left: 15px;
 
 }
 section{
     color: black;
     width: 70%;
 }
-
+.profile{
+    height: 70px;
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 20px;
+    background-color: white;
+    border-top: 10px solid #F4F5FE ;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #99989A;
+}
+.profile img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+section{
+    background-color: #F4F5FE;
+    
+}
 
 @media only screen and (max-width: 600px){
     .rootlayout a{

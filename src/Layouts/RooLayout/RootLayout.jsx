@@ -7,7 +7,9 @@ import { AiOutlineFund,AiOutlineHome, AiTwotoneHome, AiOutlineMenuUnfold,
 import { SlCalender, SlSocialSpotify } from "react-icons/sl"
 import { MdPeopleOutline } from "react-icons/md"
 import { BsBlockquoteRight } from "react-icons/bs"
+import { FaGreaterThan } from "react-icons/fa"
 import { MdOutlineConfirmationNumber } from "react-icons/md"
+import female from '../../assets/femaleProfile.jpg'
 
 const RootLayout = () => {
     const [toggle, setToggle] = useState(false)
@@ -17,7 +19,9 @@ const RootLayout = () => {
  
   return (
     <div className={Root.rootlayout}>
-        <nav style={{width: toggle ? '100px': '300px' }}>
+      <div className={Root.container} style={{width: toggle ? '100px': '300px' }}>
+     <div className={Root.wrapper}>
+     <nav>
             <div className={Root.ham} style={{flexDirection: toggle ? 'column': 'row'}}>
                 <div className="harmburger">
                     <BsBlockquoteRight fontSize={'25'} onClick={Open} />
@@ -121,6 +125,19 @@ const RootLayout = () => {
                 </main>
             </ul>
         </nav>
+        <div className={Root.profile}>
+                <div style={{display: 'flex', alignItems:'center', gap:'20px'}}>
+                    <img src={female} alt="" />
+                    <h3>Kelvin Hart</h3>
+                </div>
+                <FaGreaterThan />
+
+
+        </div>
+     </div>
+      </div>
+        
+
         <section>
             <Outlet />
         </section>
