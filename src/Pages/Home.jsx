@@ -2,7 +2,8 @@ import React from 'react'
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from 'react-icons/hi'
 import { FiSearch } from 'react-icons/fi'
 import { TbMathGreater } from 'react-icons/tb'
-import { BsQuote } from 'react-icons/bs'
+import { GiPreviousButton, GiNextButton } from 'react-icons/gi'
+import { BsQuote, BsFillPauseCircleFill } from 'react-icons/bs'
 import fire from '../assets/fire.png'
 import { data } from '../Data'
 
@@ -71,7 +72,9 @@ const Home = () => {
 
             {/* PLAY */}
             <div className="play">
-                  
+              <GiPreviousButton fontSize={'30'} />
+               <BsFillPauseCircleFill fontSize={'30'} /> 
+               <GiNextButton fontSize={'30'} />  
             </div>
           </div>
         </section>

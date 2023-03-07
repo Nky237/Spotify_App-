@@ -92,15 +92,16 @@ section{
 .profile{
     height: 70px;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 50px;
     border-radius: 20px;
     background-color: white;
     border-top: 10px solid #F4F5FE ;
-    padding: 10px 15px;
+    padding: 30px 15px !important;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: #99989A;
+    align-items: center !important;
 }
 .profile img{
     width: 40px;
