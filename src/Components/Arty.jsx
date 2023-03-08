@@ -6,7 +6,7 @@ const Arty = ({img, para, head}) => {
     <div>
         <div className="art" style={{display: 'flex', justifyContent:'space-between',
          paddingTop: '20px', alignItems:'center'}}>
-            <div style={{display:'flex', gap:"10px", alignItems:'center'}}>
+            <div style={{display:'flex', gap:"13px", alignItems:'center'}}>
                 <img src={img} alt="image" style={{height: '40px', width:'40px',
                 borderRadius:'50%' }}/>
                 <span>

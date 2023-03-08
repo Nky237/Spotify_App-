@@ -4,8 +4,9 @@ import { FiSearch } from 'react-icons/fi'
 import { AiOutlinePlusSquare } from 'react-icons/ai'
 import { TbMathGreater } from 'react-icons/tb'
 import { FcDoughnutChart } from 'react-icons/fc'
-import { GiPreviousButton, GiNextButton } from 'react-icons/gi'
-import { BsQuote, BsFillPauseCircleFill } from 'react-icons/bs'
+import { CgPiano } from 'react-icons/cg'
+import { GiPreviousButton, GiNextButton, GiStarShuriken, GiGuitar, GiTrumpet } from 'react-icons/gi'
+import { BsQuote, BsFillPauseCircleFill, BsMusicNoteBeamed } from 'react-icons/bs'
 import man1 from '../assets/man1.jfif'
 import man2 from '../assets/man2.jfif'
 import woman1 from '../assets/woman1.jfif'
@@ -53,7 +54,10 @@ const Home = () => {
             </div>
             {/* PLAYLIST SECTION */}
             <div className="playlist">
+              <span style={{display:'flex', justifyContent:'space-between'}}>
               <h1>My Playlist</h1>
+              <p>Show All</p>
+              </span>
               <div>
               <table>
                 <tr>
@@ -92,12 +96,12 @@ const Home = () => {
             <div className="navflex" style={{display: 'flex',flexWrap:'wrap' , gap: '10px',
           paddingTop: '10px'
           }}>
-                <ShortButton text={'Chill Hits'} icon ={<FcDoughnutChart />} />
-                <ShortButton text={'Hop'} />
-                <ShortButton text={'Accoustic'} />
-                <ShortButton text={'India Pop'} />
-                <ShortButton text={'Piano Blues'} />
-                <ShortButton text={'Jazz'} />
+                <ShortButton text={'Chill Hits'} icon ={<FcDoughnutChart  />} />
+                <ShortButton text={'Hop'} icon={<GiStarShuriken style={{fill:'yellow'}} />} />
+                <ShortButton text={'Accoustic'} icon={<GiGuitar fill='#DF5F5D' />}/>
+                <ShortButton text={'India Pop'} icon ={<BsMusicNoteBeamed  />} />
+                <ShortButton text={'Piano Blues'} icon ={<CgPiano  />}/>
+                <ShortButton text={'Jazz'} icon ={<GiTrumpet fill='#CBAD47'  />}/>
             </div>
             <div className="fav">
               <div className='favIn'>

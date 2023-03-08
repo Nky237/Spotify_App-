@@ -48,10 +48,9 @@
     width: 20px;
 }
 .bg{
-    border: 1px solid black;
     height: 200px;
     border-radius: 25px;
-    background: url(./assets/man.jpg);
+    background: linear-gradient(rgba(230, 227, 227, 0.7), rgba(0, 0, 0, 0.7)), url(./assets/man.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -74,8 +73,10 @@
 .btn button{
     height: 40px;
     border-radius: 25px;
+    border: none;
     padding: 10px 30px;
     transition: 0.5s all ease-in ;
+    opacity: 0.5;
 }
 .btn button:hover{
     background-color: black;
@@ -85,12 +86,14 @@
 /* PLAYLIST */
 .playlist{
     padding-top: 30px;
+    color: #BABBC2;
 }
 .playlist h1{
     font-size: 32px;
+    color: black;
 }
 tr th{
-    padding: 10px 80px 10px 0;
+    padding: 10px 79px 10px 0;
 }
 table{
     width: 100%;
@@ -127,7 +130,7 @@ tr:hover{
     margin: auto;
     padding-top: 20px;
 }
-h2, h4{
+h1,h2, h4{
     color: black;
 }
 .card{
