@@ -1,12 +1,4 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-}
-body{
-    background-color: #F4F5FE;
-}
+
 .rootlayout{
     min-height: 100vh;
     display: flex;
@@ -26,6 +18,7 @@ body{
     align-items: center;
     gap: 15px;
     padding-left: 15px;
+    margin-bottom: 20px;
 }
 
 .rootlayout .container{
@@ -100,12 +93,13 @@ section{
     border-radius: 20px;
     background-color: white;
     border-top: 10px solid #F4F5FE ;
-    padding: 30px 15px !important;
+    padding: 70px 15px 0 15px !important;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #99989A;
+    color: #535355;
     align-items: center !important;
+    font-size: 11px;
 }
 .profile img{
     width: 40px;

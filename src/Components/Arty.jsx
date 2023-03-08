@@ -8,10 +8,12 @@ const Arty = ({img, para, head}) => {
          paddingTop: '20px', alignItems:'center'}}>
             <div style={{display:'flex', gap:"13px", alignItems:'center'}}>
                 <img src={img} alt="image" style={{height: '40px', width:'40px',
-                borderRadius:'50%' }}/>
+                borderRadius:'50%' ,
+                objectFit: 'cover'
+                }}/>
                 <span>
-                    <h4>{head}</h4>
-                    <p>{para}</p>
+                    <h4 style={{fontSize: '14px'}}>{head}</h4>
+                    <p  style={{fontSize: '12px', marginTop:'4px'}}>{para}</p>
                 </span>
             </div>
             <BiDotsHorizontal />

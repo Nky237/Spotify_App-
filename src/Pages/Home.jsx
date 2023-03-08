@@ -15,6 +15,7 @@ import fire from '../assets/fire.png'
 import { data } from '../Data'
 import ShortButton from '../Components/ShortButton'
 import Arty from '../Components/Arty'
+import { FaGreaterThan } from "react-icons/fa"
 
 const Home = () => {
   return (
@@ -36,14 +37,16 @@ const Home = () => {
                 </div>
                 <div className='trend'>
                 <h1>Trending</h1>
-                <span style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
-                <p>more</p>
-                <TbMathGreater />
+                <span style={{display: 'flex', alignItems: 'center', gap: '13px',
+              color: '#BABBC2;', fontSize:'14px'
+              }}>
+                <p>More</p>
+                <FaGreaterThan fill='#BABBC2;' fontSize={'11'}/>
                 </span>
                 </div>
                 <div className="bg">
                   <div className="text">
-                    <p>Artists</p>
+                    <p>Artist</p>
                     <h1>On Top <br></br>Of The World</h1>
                     <div className="btn">
                       <button>PLAY</button>
@@ -60,13 +63,13 @@ const Home = () => {
               </span>
               <div>
               <table>
-                <tr>
+                {/* <tr>
                   <th><BsQuote /></th>
                   <th>TITLE</th>
                   <th>ARTIST</th>
                   <th>TIME</th>
                   <th>ALBUM</th>
-                </tr>
+                </tr> */}
                   {
                     data.map(item => (
                           <tr>
@@ -105,7 +108,7 @@ const Home = () => {
             </div>
             <div className="fav">
               <div className='favIn'>
-              <h2>Fav Artist</h2>
+              <h2 style={{fontSize:'19px'}}>Fav Artist</h2>
                 <Arty head={'Taylor Swift'} para={'190 songs in library'} img={woman1} />
                 <Arty head={'Kanye West'} para={'124 songs in library'} img={man2} />
                 <Arty head={'Drake'} para={'90 songs in library'} img={man1}/>

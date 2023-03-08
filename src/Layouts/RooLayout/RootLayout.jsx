@@ -27,7 +27,7 @@ const RootLayout = () => {
                     <BsBlockquoteRight fontSize={'25'} onClick={Open} />
                 </div>
             </div>
-            <div className={Root.logo} >
+            <div className={Root.logo} > 
                 <SlSocialSpotify fontSize={'35'} />
                 <h1 style={{display: toggle ? 'none': 'block'}}>SPOTIFY</h1>
             </div>
