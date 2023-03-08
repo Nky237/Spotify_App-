@@ -59,7 +59,9 @@ const Home = () => {
             <div className="playlist">
               <span style={{display:'flex', justifyContent:'space-between'}}>
               <h1>My Playlist</h1>
-              <p>Show All</p>
+              <p style={{fontSize: '13px', fontWeight: '600', paddingTop: '10px',
+            color:"#89898A"
+            }}>Show All</p>
               </span>
               <div>
               <table>
