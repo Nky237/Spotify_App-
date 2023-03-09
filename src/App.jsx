@@ -3,7 +3,8 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
-  Route
+  Route,
+  Navigate,
 } from 'react-router-dom'
 
 // LAYOUTS
@@ -18,11 +19,15 @@ import Notable from './Pages/discover/Notable'
 import Release from './Pages/discover/Release'
 import Feed from './Pages/Feed'
 import Event from './Pages/discover/Event'
+import Land from './Pages/Land'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<RootLayout />}>
-        <Route index element={<Home />} />
+    <>
+      <Route index element= {<Land />} />
+    <Route path='root' element={<RootLayout />}>
+        <Route path="" element={<Navigate replace to="home" />} />
+        <Route path="home" element={<Home />} />
         <Route path='trend' element={<Trends />} />
         <Route path='artist' element={<Artist />} />
         <Route path='fav' element={<Favourite />} />
@@ -31,6 +36,7 @@ const router = createBrowserRouter(
         <Route path='feed' element={<Feed />} />
         <Route path='event' element={<Event />} />
     </Route>
+    </>
 
   )
 )

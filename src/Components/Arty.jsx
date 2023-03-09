@@ -16,7 +16,7 @@ const Arty = ({img, para, head}) => {
                     <p  style={{fontSize: '12px', marginTop:'4px'}}>{para}</p>
                 </span>
             </div>
-            <BiDotsHorizontal />
+            <BiDotsHorizontal color='black' fontWeight={'900'} />
         </div>
     </div>
   )

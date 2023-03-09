@@ -125,7 +125,7 @@ const Home = () => {
                   <h4>Localoca</h4>
                   <p>Shakira</p>
                   </span>
-                  <AiOutlinePlusSquare fontSize={'25'} fontWeight={'500'}/>
+                  <AiOutlinePlusSquare fontSize={'25'} fontWeight={'900'} color="#4F4F50" />
                 </div>
 
                </div>

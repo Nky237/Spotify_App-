@@ -34,12 +34,12 @@ const RootLayout = () => {
             <ul>
                     
                 <div>
-                <NavLink to ='/'
+                <NavLink to ='home'
                 style={{backgroundColor:'white', width:'100%',
                 borderRadius:'0px', padding: '0'
                 }} 
                 >
-                <NavLink to='/'>  
+                <NavLink to='home'>  
                     <AiTwotoneHome fontSize={'20'} />
                     <li style={{display: toggle ? 'none': 'block'}}>Home</li>
                     </NavLink>   
@@ -138,7 +138,7 @@ const RootLayout = () => {
       </div>
         
 
-        <section>
+        <section >
             <Outlet />
         </section>
     </div>
