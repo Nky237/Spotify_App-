@@ -1,12 +1,12 @@
 import { MdFormatQuote } from 'react-icons/md'
 export const data = [
-    {
-      id: <MdFormatQuote />,
-      title: 'TITLE' ,
-      Artist: 'ARTIST',
-      time: 'TIME',
-      Album: 'ALBUM'
-    },
+    // {
+    //   id: <MdFormatQuote />,
+    //   title: 'TITLE' ,
+    //   Artist: 'ARTIST',
+    //   time: 'TIME',
+    //   Album: 'ALBUM'
+    // },
     {
         id: '01',
         title: 'priority',

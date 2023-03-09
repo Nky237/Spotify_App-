@@ -5,6 +5,7 @@ import { AiOutlinePlusSquare } from 'react-icons/ai'
 import { TbMathGreater } from 'react-icons/tb'
 import { FcDoughnutChart } from 'react-icons/fc'
 import { CgPiano } from 'react-icons/cg'
+import { MdFormatQuote } from 'react-icons/md'
 import { GiPreviousButton, GiNextButton, GiStarShuriken, GiGuitar, GiTrumpet } from 'react-icons/gi'
 import { BsQuote, BsFillPauseCircleFill, BsMusicNoteBeamed } from 'react-icons/bs'
 import man1 from '../assets/man1.jfif'
@@ -12,6 +13,7 @@ import man2 from '../assets/man2.jfif'
 import woman1 from '../assets/woman1.jfif'
 import woman2 from '../assets/woman2.jfif'
 import fire from '../assets/fire.png'
+import one from '../assets/one.jpg'
 import { data } from '../Data'
 import ShortButton from '../Components/ShortButton'
 import Arty from '../Components/Arty'
@@ -48,9 +50,9 @@ const Home = () => {
                   <div className="text">
                     <p>Artist</p>
                     <h1>On Top <br></br>Of The World</h1>
-                    <div className="btn">
-                      <button>PLAY</button>
-                      <button>FOLLOW</button>
+                    <div className="btn" style={{marginTop:'15px'}}>
+                      <button className='bg-btn'>PLAY</button>
+                      <button className='btn2'>FOLLOW</button>
                     </div>
                   </div>
                 </div>
@@ -65,17 +67,17 @@ const Home = () => {
               </span>
               <div>
               <table>
-                {/* <tr>
-                  <th><BsQuote /></th>
+                <tr>
+                  <th><MdFormatQuote /></th>
                   <th>TITLE</th>
                   <th>ARTIST</th>
                   <th>TIME</th>
                   <th>ALBUM</th>
-                </tr> */}
+                </tr>
                   {
                     data.map(item => (
                           <tr>
-                            <td>{item.id}</td>
+                          <td>{item.id}</td>
                           <td>{item.title}</td>
                           <td>{item.Artist}</td>
                           <td>{item.time}</td>
@@ -118,9 +120,10 @@ const Home = () => {
 
                <div className="card">
                <figure className='fav-img'>
-                  <img src={woman2}/>
+                  <img src= {one}/>
                 </figure>
-                <div style={{display: 'flex', justifyContent:'space-between', paddingRight:'20px'}}>
+                <div style={{display: 'flex', justifyContent:'space-between', 
+                paddingRight:'20px', paddingTop:'60px'}}>
                   <span>
                   <h4>Localoca</h4>
                   <p>Shakira</p>
