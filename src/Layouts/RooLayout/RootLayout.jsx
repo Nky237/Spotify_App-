@@ -8,7 +8,7 @@ import { SlCalender, SlSocialSpotify } from "react-icons/sl"
 import { MdPeopleOutline } from "react-icons/md"
 import { BsBlockquoteRight } from "react-icons/bs"
 import { FaGreaterThan } from "react-icons/fa"
-import { MdOutlineConfirmationNumber } from "react-icons/md"
+import { MdOutlineConfirmationNumber, MdOutlineKeyboardArrowRight } from "react-icons/md"
 import female from '../../assets/femaleProfile.jpg'
 
 const RootLayout = () => {
@@ -130,7 +130,7 @@ const RootLayout = () => {
                     <img src={female} alt="" />
                     <h3>Kelvin Hart</h3>
                 </div>
-                <FaGreaterThan />
+                <MdOutlineKeyboardArrowRight fontSize={'23px'} />
 
 
         </div>

@@ -5,7 +5,7 @@ import { AiOutlinePlusSquare } from 'react-icons/ai'
 import { TbMathGreater } from 'react-icons/tb'
 import { FcDoughnutChart } from 'react-icons/fc'
 import { CgPiano } from 'react-icons/cg'
-import { MdFormatQuote } from 'react-icons/md'
+import { MdFormatQuote, MdOutlineKeyboardArrowRight } from 'react-icons/md'
 import { GiPreviousButton, GiNextButton, GiStarShuriken, GiGuitar, GiTrumpet } from 'react-icons/gi'
 import { BsQuote, BsFillPauseCircleFill, BsMusicNoteBeamed, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs'
 import man1 from '../assets/man1.jfif'
@@ -26,8 +26,8 @@ const Home = () => {
           <div className="cont">
           <div className="search">
           <div className="ico" style={{display: 'flex', gap:'20px'}}>
-                <BsArrowLeftShort fontSize={'27px'} color={'#A39DB0'} />
-                <BsArrowRightShort fontSize={'27px'} color={'#A39DB0'} />
+                <BsArrowLeftShort fontSize={'27px'} color={'#483958'} />
+                <BsArrowRightShort fontSize={'27px'} color={'#483958'} />
           </div>
                 <input type="text" placeholder='search for artists, songs and ...'/>
                 <FiSearch className='searchIcon' />
@@ -41,11 +41,11 @@ const Home = () => {
                 </div>
                 <div className='trend'>
                 <h1>Trending</h1>
-                <span style={{display: 'flex', alignItems: 'center', gap: '13px',
-              color: '#BABBC2;', fontSize:'14px'
+                <span style={{display: 'flex', alignItems: 'center', gap: '6px',
+              color: '#B2B2B6', fontSize:'14px'
               }}>
                 <p>More</p>
-                <FaGreaterThan fill='#BABBC2;' fontSize={'11'}/>
+                <MdOutlineKeyboardArrowRight  fontSize={'21'}/>
                 </span>
                 </div>
                 <div className="bg">

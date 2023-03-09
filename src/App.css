@@ -55,6 +55,7 @@ body{
     border: none;
     padding-left: 50px;
     font-size: 14px;
+    color: #D6D6D9 !important;
 }
 .searchIcon{
     position: absolute;
