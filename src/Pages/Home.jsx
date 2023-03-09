@@ -7,7 +7,7 @@ import { FcDoughnutChart } from 'react-icons/fc'
 import { CgPiano } from 'react-icons/cg'
 import { MdFormatQuote } from 'react-icons/md'
 import { GiPreviousButton, GiNextButton, GiStarShuriken, GiGuitar, GiTrumpet } from 'react-icons/gi'
-import { BsQuote, BsFillPauseCircleFill, BsMusicNoteBeamed } from 'react-icons/bs'
+import { BsQuote, BsFillPauseCircleFill, BsMusicNoteBeamed, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs'
 import man1 from '../assets/man1.jfif'
 import man2 from '../assets/man2.jfif'
 import woman1 from '../assets/woman1.jfif'
@@ -25,8 +25,10 @@ const Home = () => {
         <section className='main'>
           <div className="cont">
           <div className="search">
-                <HiArrowNarrowLeft />
-                <HiArrowNarrowRight />
+          <div className="ico" style={{display: 'flex', gap:'20px'}}>
+                <BsArrowLeftShort fontSize={'27px'} color={'#A39DB0'} />
+                <BsArrowRightShort fontSize={'27px'} color={'#A39DB0'} />
+          </div>
                 <input type="text" placeholder='search for artists, songs and ...'/>
                 <FiSearch className='searchIcon' />
             </div>
