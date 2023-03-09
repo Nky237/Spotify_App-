@@ -50,9 +50,15 @@ const Home = () => {
                   <div className="text">
                     <p>Artist</p>
                     <h1>On Top <br></br>Of The World</h1>
+                    <div className='bgo'>
                     <div className="btn" style={{marginTop:'15px'}}>
                       <button className='bg-btn'>PLAY</button>
                       <button className='btn2'>FOLLOW</button>
+                    </div>
+                    <span style={{color:'white'}}>
+                        <p>Monthly Listeners</p>
+                        <h5>32,092</h5>
+                    </span>
                     </div>
                   </div>
                 </div>

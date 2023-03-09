@@ -112,6 +112,21 @@ body{
     transition: 0.5s all ease-in ;
     border: 1px solid black;
 }
+.bgo{
+    display: flex;
+    justify-content: space-between;
+}
+.bgo span p{
+    padding: 30px 20px 0 0;
+    font-weight: 200;
+    font-size: 13px;
+}
+.bgo span h5{
+display: flex;
+justify-content: flex-end;
+padding-right: 20px ;
+font-weight: 500;
+}
 .bg-btn{
     background-color: black;
     color: white;
