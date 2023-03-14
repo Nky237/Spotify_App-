@@ -8,7 +8,6 @@ import { SlCalender, SlSocialSpotify } from "react-icons/sl"
 import { MdPeopleOutline } from "react-icons/md"
 import { BsBlockquoteRight } from "react-icons/bs"
 import { MdOutlineConfirmationNumber, MdOutlineKeyboardArrowRight } from "react-icons/md"
-import female from '../../assets/femaleProfile.jpg'
 import { UserState } from '../../context';
 
 const RootLayout = () => {
@@ -41,94 +40,44 @@ const RootLayout = () => {
                 <h1 style={{display: toggle ? 'none': 'block'}}>SPOTIFY</h1>
             </div>
             <ul>
-                    
                 <div>
-                <NavLink to ='home'
-                style={{backgroundColor:'white', width:'100%',
-                borderRadius:'0px', padding: '0'
-                }} 
-                >
-                <NavLink to='home'>  
+                <NavLink to ='home'>
                     <AiTwotoneHome fontSize={'20'} />
                     <li style={{display: toggle ? 'none': 'block'}}>Home</li>
-                    </NavLink>   
                 </NavLink> 
-                <NavLink to='trend'
-                style={{backgroundColor:'white', width:'100%',
-                borderRadius:'0px', padding: '0'
-                }} 
-                >              
-                 <NavLink to='trend'>
+                <NavLink to='trend'>              
                     <AiOutlineFund fontSize={'20'}/>
                     <li style={{display: toggle ? 'none': 'block'}}>Trends</li>
                 </NavLink>       
-                </NavLink>       
-                <NavLink to ='feed'
-                style={{backgroundColor:'white', width:'100%',
-                borderRadius:'0px', padding: '0'
-                }} 
-                >
-                <NavLink to='feed'>
+                <NavLink to ='feed'>
                          <AiOutlineCompass fontSize={'20'}/>
                     <li style={{display: toggle ? 'none': 'block'}}>Feed</li>
-                </NavLink>
                 </NavLink>
                 </div>
                 <main className={Root.discover}>
                     <p style={{display: toggle ? 'none': 'block'}}>Discover</p>
-                    <NavLink to ='new'
-                style={{backgroundColor:'white', width:'100%',
-                borderRadius:'0px', padding: '0'
-                }} 
-                >
-                    <NavLink to='new'>
+                    <NavLink to ='new'>
                          <AiOutlineAppstore fontSize={'20'}/>
                         <li style={{display: toggle ? 'none': 'block'}}>New and Notable</li>
-                    </NavLink>
                  </NavLink>
-                       <NavLink to ='release'
-                style={{backgroundColor:'white', width:'100%',
-                borderRadius:'0px', padding: '0'
-                }} 
-                >
-                    <NavLink to='release'>
+                       <NavLink to ='release'>
                          <SlCalender fontSize={'16'}/>
                         <li style={{display: toggle ? 'none': 'block'}}>Release and Calender</li>
                     </NavLink>
-                    </NavLink>
-                <NavLink to ='event'
-                style={{backgroundColor:'white', width:'100%',
-                borderRadius:'0px', padding: '0'
-                }} 
-                >
-                    <NavLink to='event'>
+                <NavLink to ='event' >
                          <MdOutlineConfirmationNumber fontSize={'20'}/>
                         <li style={{display: toggle ? 'none': 'block'}}>Events</li>
                     </NavLink>
-                    </NavLink>
-                    
                 </main>
                 <main className={Root.discover}>
                     <p style={{display: toggle ? 'none': 'block'}}>Your Collection</p>
-                    <NavLink to ='fav'
-                style={{backgroundColor:'white', width:'100%',
-                borderRadius:'0px', padding: '0'
-                }} 
-                >
-                    <NavLink to='fav'>
+                    <NavLink to ='fav'>
                         <AiOutlineHeart fontSize={'20'}/>
                         <li style={{display: toggle ? 'none': 'block'}}>Favourite Songs</li>
-                    </NavLink>
                  </NavLink>
-                    <NavLink to ='artist'
-                style={{backgroundColor:'white', width:'100%',
-                borderRadius:'0px', padding: '0'
-                }} 
-                >
-                    <NavLink to='artist'>
+                    <NavLink to ='artist' >
                         <MdPeopleOutline fontSize={'20'}/>
                         <li style={{display: toggle ? 'none': 'block'}}>Artist</li>
-                    </NavLink>
                     </NavLink>
                     <button className={Root.logout} onClick={handleLogout}>Logout</button>
                 </main>

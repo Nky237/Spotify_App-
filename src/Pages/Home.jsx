@@ -153,7 +153,8 @@ const Home = () => {
               </span>
               <div>
               <table>
-                <tr>
+                  <tbody>
+                  <tr>
                   <th><MdFormatQuote /></th>
                   <th>TITLE</th>
                   <th>ARTIST</th>
@@ -180,6 +181,7 @@ const Home = () => {
                       <td></td>
                     </tr>
                   }
+                  </tbody>
              </table>
               </div>
             </div>
@@ -192,11 +194,6 @@ const Home = () => {
                   controls
                 />
             </div>
-            {/* <div className="play">
-              <GiPreviousButton fontSize={'30'} />
-               <BsFillPauseCircleFill fontSize={'30'} /> 
-               <GiNextButton fontSize={'30'} />  
-            </div> */}
           </div>
         </section>
         <section className='Nav'>

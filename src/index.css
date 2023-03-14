@@ -4,9 +4,18 @@ a{
   border: none;
 }
 a.active{
+  display: inline-block;
   color: white !important;
   background-color: black;
   border-right: 3px solid black; 
+}
+a.active::after {
+  content: "";
+  position: absolute;
+  height: 50px;
+  width: 5px;
+  background: #000;
+  right: 0;
 }
 p ~ a.active{
 margin-top: 20px !important;
