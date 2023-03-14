@@ -16,7 +16,7 @@ import ReactAudioPlayer from 'react-audio-player'
 
 
 export const SPOTIFY_BASE_URL= import.meta.env
-	.VITE_SPOTIFY_BASE_URL;
+	.VITE_VERCEL_SPOTIFY_BASE_URL;
 
 const Home = () => {
 	const { userDetails, setUserDetails } = useContext(UserState);

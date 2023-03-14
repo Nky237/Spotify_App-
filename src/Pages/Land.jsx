@@ -2,8 +2,8 @@ import React, {useEffect} from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Sporty from '../assets/Sporty.png'
 
-const CLIENT_ID  = import.meta.env.VITE_CLIENT_ID ;
-const REDIRECT_URI  = import.meta.env.VITE_REDIRECT_URI ;
+const CLIENT_ID  = import.meta.env.VITE_VERCEL_CLIENT_ID ;
+const REDIRECT_URI  = import.meta.env.VITE_VERCEL_REDIRECT_URI ;
 const authEndpoint = "https://accounts.spotify.com/authorize";
 const SCOPES = [
 	"user-read-currently-playing",
