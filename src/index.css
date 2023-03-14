@@ -7,7 +7,6 @@ a.active{
   display: inline-block;
   color: white !important;
   background-color: black;
-  border-right: 3px solid black; 
 }
 a.active::after {
   content: "";
