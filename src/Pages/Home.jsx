@@ -15,8 +15,7 @@ import { getRandomSearch, millisToMinutesAndSeconds } from '../factoryFunctions'
 import ReactAudioPlayer from 'react-audio-player'
 
 
-export const SPOTIFY_BASE_URL= import.meta.env
-	.VITE_VERCEL_SPOTIFY_BASE_URL;
+export const SPOTIFY_BASE_URL= "https://api.spotify.com/v1"
 
 const Home = () => {
 	const { userDetails, setUserDetails } = useContext(UserState);
