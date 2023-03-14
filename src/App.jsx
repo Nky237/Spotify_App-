@@ -22,19 +22,22 @@ import Event from './Pages/discover/Event'
 import Land from './Pages/Land'
 
 const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <Land />,
-      errorElement: (
-            <span>😅</span>
-      ),
-    },
-    {
-      path: "/home",
-      element: <Home />,
-    },
-  ]
+  createRoutesFromElements(
+    <>
+      <Route index element= {<Land />} />
+    <Route path='root' element={<RootLayout />}>
+        <Route path="" element={<Navigate replace to="home" />} />
+        <Route path="home" element={<Home />} />
+        <Route path='trend' element={<Trends />} />
+        <Route path='artist' element={<Artist />} />
+        <Route path='fav' element={<Favourite />} />
+        <Route path='new' element={<Notable />} />
+        <Route path='release' element={<Release />} />
+        <Route path='feed' element={<Feed />} />
+        <Route path='event' element={<Event />} />
+    </Route>
+    </>
+  )
 )
 
 function App() {
