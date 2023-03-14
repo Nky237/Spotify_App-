@@ -25,9 +25,9 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route index element= {<Land />} />
-      <Route path="/home" element={<Home />} />
-    {/* <Route path='' element={<RootLayout />}>
+    <Route path='root' element={<RootLayout />}>
         <Route path="" element={<Navigate replace to="home" />} />
+        <Route path="home" element={<Home />} />
         <Route path='trend' element={<Trends />} />
         <Route path='artist' element={<Artist />} />
         <Route path='fav' element={<Favourite />} />
@@ -35,9 +35,8 @@ const router = createBrowserRouter(
         <Route path='release' element={<Release />} />
         <Route path='feed' element={<Feed />} />
         <Route path='event' element={<Event />} />
-    </Route> */}
+    </Route>
     </>
-
   )
 )
 
