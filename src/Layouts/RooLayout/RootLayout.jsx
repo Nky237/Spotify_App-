@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import Root from '../RooLayout/Root.module.css'
 import { AiOutlineFund,AiOutlineHome, AiTwotoneHome, AiOutlineMenuUnfold,
     AiOutlineCompass, AiOutlineAppstore, AiOutlineHeart
@@ -7,16 +7,25 @@ import { AiOutlineFund,AiOutlineHome, AiTwotoneHome, AiOutlineMenuUnfold,
 import { SlCalender, SlSocialSpotify } from "react-icons/sl"
 import { MdPeopleOutline } from "react-icons/md"
 import { BsBlockquoteRight } from "react-icons/bs"
-import { FaGreaterThan } from "react-icons/fa"
 import { MdOutlineConfirmationNumber, MdOutlineKeyboardArrowRight } from "react-icons/md"
 import female from '../../assets/femaleProfile.jpg'
+import { UserState } from '../../context';
 
 const RootLayout = () => {
     const [toggle, setToggle] = useState(false)
+	const {userDetails} = useContext(UserState);
+    const navigate = useNavigate();
+
     const Open = ()=>{
         setToggle(!toggle)
     }
- 
+
+    const handleLogout = () => {
+		localStorage.clear();
+		navigate("/");
+	};
+
+
   return (
     <div className={Root.rootlayout}>
       <div className={Root.container} style={{width: toggle ? '100px': '300px' }}>
@@ -121,23 +130,19 @@ const RootLayout = () => {
                         <li style={{display: toggle ? 'none': 'block'}}>Artist</li>
                     </NavLink>
                     </NavLink>
-                    
+                    <button className={Root.logout} onClick={handleLogout}>Logout</button>
                 </main>
             </ul>
         </nav>
         <div className={Root.profile}>
                 <div style={{display: 'flex', alignItems:'center', gap:'20px'}}>
-                    <img src={female} alt="" />
-                    <h3>Kelvin Hart</h3>
+                    <img src={userDetails?.images?.[0]?.url} alt="" />
+                    <h3>{userDetails?.display_name}</h3>
                 </div>
                 <MdOutlineKeyboardArrowRight fontSize={'23px'} />
-
-
         </div>
      </div>
       </div>
-        
-
         <section >
             <Outlet />
         </section>
