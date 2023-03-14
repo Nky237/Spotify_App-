@@ -87,13 +87,12 @@ section{
     width: 70%;
 }
 .profile{
-    height: 70px;
     width: 100%;
     margin-top: 50px;
     border-radius: 20px;
     background-color: white;
     border-top: 10px solid #F4F5FE ;
-    padding: 70px 15px 0 15px !important;
+    padding: 30px 15px 0 15px !important;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -105,11 +104,24 @@ section{
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    object-fit: contain;
+    background: black;
 }
 section{
     background-color: #F4F5FE;
     width: 80%;
-    
+}
+
+.logout {
+    background: none;
+    border:none;
+    color: #f00;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    text-align: start;
+    padding: 10px 20px;
 }
 
 @media only screen and (max-width: 600px){

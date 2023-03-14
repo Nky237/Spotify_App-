@@ -1,25 +1,103 @@
-import React from 'react'
-import { HiArrowNarrowLeft, HiArrowNarrowRight } from 'react-icons/hi'
+import React, { useContext, useEffect, useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
 import { AiOutlinePlusSquare } from 'react-icons/ai'
-import { TbMathGreater } from 'react-icons/tb'
 import { FcDoughnutChart } from 'react-icons/fc'
 import { CgPiano } from 'react-icons/cg'
 import { MdFormatQuote, MdOutlineKeyboardArrowRight } from 'react-icons/md'
-import { GiPreviousButton, GiNextButton, GiStarShuriken, GiGuitar, GiTrumpet } from 'react-icons/gi'
-import { BsQuote, BsFillPauseCircleFill, BsMusicNoteBeamed, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs'
-import man1 from '../assets/man1.jfif'
-import man2 from '../assets/man2.jfif'
-import woman1 from '../assets/woman1.jfif'
-import woman2 from '../assets/woman2.jfif'
+import { GiStarShuriken, GiGuitar, GiTrumpet } from 'react-icons/gi'
+import {BsMusicNoteBeamed, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs'
 import fire from '../assets/fire.png'
-import one from '../assets/one.jpg'
-import { data } from '../Data'
 import ShortButton from '../Components/ShortButton'
 import Arty from '../Components/Arty'
-import { FaGreaterThan } from "react-icons/fa"
+import { useNavigate } from 'react-router-dom'
+import { UserState } from '../context'
+import { getRandomSearch, millisToMinutesAndSeconds } from '../factoryFunctions'
+import ReactAudioPlayer from 'react-audio-player'
+
+
+export const SPOTIFY_BASE_URL= import.meta.env
+	.VITE_SPOTIFY_BASE_URL;
 
 const Home = () => {
+	const { userDetails, setUserDetails } = useContext(UserState);
+  const [tracks, setTracks] = useState([])
+  const [currentTrack, setCurrentTrack] = useState(null)
+
+  const navigate = useNavigate();
+	const token = localStorage.getItem("tkn");
+
+	const handleLogout = () => {
+		localStorage.clear();
+		navigate("/");
+	};
+
+	useEffect(() => {
+		if (!token) {
+			navigate("/");
+		}
+	}, []);
+
+  // user details
+	useEffect(() => {
+		fetch(`${SPOTIFY_BASE_URL}/me`, {
+			method: "GET",
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		})
+			.then((response) => {
+				if (response?.status === 401) {
+					return handleLogout();
+				}
+				return response.json();
+			})
+			.then((data) => setUserDetails(data))
+			.catch(() => {
+				handleLogout();
+			});
+	}, []);
+
+  // artists detail
+	useEffect(() => {
+		fetch(`${SPOTIFY_BASE_URL}/me/following?type=artist&limit=4`, {
+			method: "GET",
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		})
+			.then((response) => {
+				if (response?.status === 401) {
+					return handleLogout();
+				}
+				return response.json();
+			})
+			.then((data) => setUserDetails((details)=>({...details, artistsDetails:data})))
+			.catch(() => {
+				handleLogout();
+			});
+	}, []);
+
+  // tracks detail
+	useEffect(() => {
+		fetch(`${SPOTIFY_BASE_URL}/search?type=track&q=${encodeURIComponent(getRandomSearch())}&limit=5`, {
+			method: "GET",
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		})
+			.then((response) => {
+				if (response?.status === 401) {
+					return handleLogout();
+				}
+				return response.json();
+			})
+			.then((data) => setTracks(data))
+			.catch(() => {
+				handleLogout();
+			});
+	}, []);
+
+
   return (
     <div className='main-body'>
         <section className='main'>
@@ -83,26 +161,42 @@ const Home = () => {
                   <th>ALBUM</th>
                 </tr>
                   {
-                    data.map(item => (
-                          <tr>
-                          <td>{item.id}</td>
-                          <td>{item.title}</td>
-                          <td>{item.Artist}</td>
-                          <td>{item.time}</td>
-                          <td>{item.Album}</td>
-                          </tr>
-                    ))
+                    tracks?.tracks?.items.length > 0 ? 
+                    tracks?.tracks?.items.map((item,index)=> {
+                      return <tr key={index} onClick={()=>setCurrentTrack(item)}>
+                        <td>{index + 1}</td>
+                        <td>{item?.name}</td>
+                        <td>{item?.artists?.[0]?.name}</td>
+                        <td>{millisToMinutesAndSeconds(item?.duration_ms)}</td>
+                        <td>{item?.album?.name}</td>
+                      </tr>
+                    }
+                    ) : 
+                    <tr >
+                      <td></td>
+                      <td></td>
+                      <td style={{fontSize:"14px", fontWeight:"500"}}>No tracks to display 😢</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
                   }
              </table>
               </div>
             </div>
 
             {/* PLAY */}
-            <div className="play">
+              <div className='play'>
+                <ReactAudioPlayer
+                  src={currentTrack?.preview_url}
+                  autoPlay
+                  controls
+                />
+            </div>
+            {/* <div className="play">
               <GiPreviousButton fontSize={'30'} />
                <BsFillPauseCircleFill fontSize={'30'} /> 
                <GiNextButton fontSize={'30'} />  
-            </div>
+            </div> */}
           </div>
         </section>
         <section className='Nav'>
@@ -121,20 +215,24 @@ const Home = () => {
             <div className="fav">
               <div className='favIn'>
               <h2 style={{fontSize:'19px'}}>Fav Artist</h2>
-                <Arty head={'Taylor Swift'} para={'190 songs in library'} img={woman1} />
-                <Arty head={'Kanye West'} para={'124 songs in library'} img={man2} />
-                <Arty head={'Drake'} para={'90 songs in library'} img={man1}/>
-                <Arty head={'Billie Eillish'} para={'15 songs in library'} img={woman2}/>
-
+              {userDetails?.artistsDetails?.artists?.items?.length > 0 ? 
+              userDetails?.artistsDetails?.artists?.items?.map((item, index)=>
+                   { return <span key={index}>
+                       <Arty head={item?.name} 
+                                  para={`Followers: ${item?.followers?.total?.toLocaleString("en-US")}`} 
+                                  img={item?.images?.[0]?.url} />
+                 </span>}
+              )
+              :<span style={{fontSize:"12px", fontWeight:"500"}}>Favorite Artist List Empty 😢</span>}
                <div className="card">
-               <figure className='fav-img'>
-                  <img src= {one}/>
+               <figure className='fav-img' style={{marginBottom:"10px"}}>
+                  <img  src= {currentTrack?.album?.images?.[0]?.url}/>
                 </figure>
-                <div style={{display: 'flex', justifyContent:'space-between', 
-                paddingRight:'20px', paddingTop:'60px'}}>
+                <div style={{display: 'flex', justifyContent:'space-between',  alignItems:"center",
+                paddingRight:'20px', paddingTop:'60px',  paddingBottom:'20px', fontSize:"14px"}}>
                   <span>
-                  <h4>Localoca</h4>
-                  <p>Shakira</p>
+                  <h4 style={{margin:"8px 0px"}}>{currentTrack?.name}</h4>
+                  <p>{currentTrack?.artists?.[0]?.name}</p>
                   </span>
                   <AiOutlinePlusSquare fontSize={'25'} fontWeight={'900'} color="#4F4F50" />
                 </div>

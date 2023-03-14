@@ -6,8 +6,25 @@
     padding: 0;
     margin: 0;
 }
+
+html::after {
+    top: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: white;
+    content: "We only have support for desktops for now!! (Width => 1280px)  😅";
+    text-align: center;
+}
+
 body{
+    display: none;
     background-color: #F4F5FE;
+    max-width: 1480px;
+    margin: 0 auto;
 }
 .Land{
     /* background-color: #1DB652 !important; */
@@ -18,18 +35,7 @@ body{
     justify-content: center;
     gap: 20px;
 }
-/* .Land img {
-    animation: rotate 2s linear infinite;
-  }
-  
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(30deg);
-    }
-  } */
+
 .main-body{
     display: flex;
 }
@@ -193,19 +199,20 @@ tr:hover{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     transition: 1s all ease-in-out;
     font-weight: 300;
-   
+   cursor: pointer;
 }
 .play{
-    width: 1005;
-    height: 70px;
-    border-radius: 25px;
+    height: 100px;
+    width: 100%;
+    border-radius: 15px;
     background-color: white;
-    padding-bottom: 10px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 5px;
-    margin-top: 20px;
+    margin: 20px 0px;
+    padding: 0px 20px;
+}
+.play > audio {
+    width: 100%;
 }
 /* NAVBAR */
 .Nav{
@@ -240,4 +247,14 @@ h1,h2, h4{
 .fav-img img{
     width: 100%;
     border-radius: 15px;
+}
+
+@media all and (min-width:1280px) {
+    html::after {
+        display: none;
+    }
+
+    body{
+        display: block;
+    }
 }
