@@ -20,7 +20,7 @@ const Land = () => {
 
 	useEffect(() => {
 		if (localStorage.getItem("tkn")) {
-			navigate("/root/home");
+			navigate("/home");
 		}
 	}, []);
 
@@ -30,7 +30,7 @@ const Land = () => {
 				"tkn",
 				location.hash.substring(1).split("&")[0].split("=")[1]
 			);
-			navigate("/root/home");
+			navigate("/home");
 		}
 	}, [location.hash]);
 

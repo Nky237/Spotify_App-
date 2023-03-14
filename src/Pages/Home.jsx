@@ -12,7 +12,6 @@ import Arty from '../Components/Arty'
 import { useNavigate } from 'react-router-dom'
 import { UserState } from '../context'
 import { getRandomSearch, millisToMinutesAndSeconds } from '../factoryFunctions'
-import ReactAudioPlayer from 'react-audio-player'
 
 
 export const SPOTIFY_BASE_URL= import.meta.env
@@ -188,11 +187,11 @@ const Home = () => {
 
             {/* PLAY */}
               <div className='play'>
-                <ReactAudioPlayer
-                  src={currentTrack?.preview_url}
-                  autoPlay
+              <audio
                   controls
-                />
+                  autoPlay
+                  src={currentTrack?.preview_url}>
+              </audio>
             </div>
           </div>
         </section>
