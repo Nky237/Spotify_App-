@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Sporty from '../assets/Sporty.png'
 
 const CLIENT_ID  = "b2d8a1ebca5f40b99f0bb847da4460bd";
-const REDIRECT_URI  = "https://spotify-app-beige.vercel.app/";
+const REDIRECT_URI  = "https://spotify-app-beige.vercel.app";
 const authEndpoint = "https://accounts.spotify.com/authorize";
 const SCOPES = [
 	"user-read-currently-playing",
